@@ -21,25 +21,35 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description {
+.text-cell {
   white-space: pre-wrap;
-  flex-grow: 8.6;
+  flex-grow: 7;
+  padding-top: 5px;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+.time-cell {
+  display: flex;
+  flex-grow: 0.3;
+  padding: 15px;
+  justify-content: right;
+  border-right: 1px solid black;
+  border-top: 1px solid rgb(175, 175, 175);
+  border-bottom: 1px solid rgb(175, 175, 175);
 }
 
 .time-block {
   text-align: center;
   border-radius: 15px;
-  flex-grow: 1;
 }
 
 .time-row {
-  width: 70%;
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
   margin: 5px auto;
   display: flex;
-  width: 80%;
+  width: 70%;
   list-style: none;
 }
 
@@ -64,16 +74,20 @@ textarea {
   color: white;
 }
 
-.saveBtn {
+.save-btn {
+  display: flex;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
   flex-grow: 0.4;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
 }
 
-.saveBtn i:hover {
+.save-btn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
