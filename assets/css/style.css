@@ -23,17 +23,24 @@ textarea {
 
 .description {
   white-space: pre-wrap;
+  flex-grow: 8.6;
 }
 
 .time-block {
   text-align: center;
   border-radius: 15px;
+  flex-grow: 1;
 }
 
-.row {
+.time-row {
+  width: 70%;
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  margin: 5px auto;
+  display: flex;
+  width: 80%;
+  list-style: none;
 }
 
 .hour {
@@ -63,6 +70,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  flex-grow: 0.4;
 }
 
 .saveBtn i:hover {
