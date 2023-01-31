@@ -22,9 +22,12 @@ textarea {
 }
 
 .text-cell {
+  display: flex;
   white-space: pre-wrap;
+  align-items: flex-start;
+  line-height: 1.5;
   flex-grow: 7;
-  padding-top: 5px;
+  padding: 5px 10px 5px;
   border: 1px solid rgb(175, 175, 175);
 }
 
@@ -81,7 +84,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-  flex-grow: 0.4;
+  flex-grow: 0.5;
   align-items: center;
   justify-content: center;
   font-size: large;

@@ -19,7 +19,7 @@ function renderSchedule() {
     // Use variables to dynamically replicate "newRow".
     var newRow = $('<ul class="time-row">');
     var timeCell = $('<li class="time-cell">');
-    var textCell = $('<li class="text-cell">');
+    var textCell = $('<textarea class="text-cell" id="schedule" placeholder="Enter your details here..." rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     
     // Append new row to exixting block
@@ -37,6 +37,8 @@ function renderSchedule() {
     console.log(timeGen)
     
     }
+    
 }
+// Hide original template and run the function
 $(tempRow).hide();
 renderSchedule()
