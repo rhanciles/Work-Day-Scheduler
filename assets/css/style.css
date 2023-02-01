@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  margin-bottom: 30px;
 }
 
 textarea {
@@ -90,7 +91,10 @@ textarea {
   font-size: large;
 }
 
-.save-btn i:hover {
+.save-btn li i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+  background-color: #83cddd;
+  color: rgb(199, 199, 199);
+  cursor: pointer;
 }

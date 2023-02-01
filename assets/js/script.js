@@ -2,7 +2,7 @@
 var currentDate = moment().format("dddd Do MMMM YYYY"); 
 $('#currentDay').text(currentDate);
 // var shoppingListEl = $('#shopping-list');
-var currentTime = moment().format("LTS"); 
+var currentTime = moment().format("LT"); 
 $('#currentTime').text(currentTime);
 
 var timeGen = 8
@@ -19,7 +19,7 @@ function renderSchedule() {
     // Use variables to dynamically replicate "newRow".
     var newRow = $('<ul class="time-row">');
     var timeCell = $('<li class="time-cell">');
-    var textCell = $('<textarea class="text-cell" id="schedule" placeholder="Enter your details here..." rows="3">');
+    var textCell = $('<textarea class="text-cell future" id="schedule" placeholder="Enter your details here..." rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     
     // Append new row to exixting block
@@ -36,9 +36,18 @@ function renderSchedule() {
     console.log(timeRow)
     console.log(timeGen)
     
+    if (moment.hour > timeGen) {
+        textCell.addclass('past');
+        textCell.removeClass("present future");
+    }  else if (moment.hour < timeGen) {
+            textCell.addclass('future');
+            textCell.removeClass("present past");
+        } 
+    
     }
     
 }
 // Hide original template and run the function
 $(tempRow).hide();
 renderSchedule()
+
