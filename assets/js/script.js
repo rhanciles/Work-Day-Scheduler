@@ -2,9 +2,15 @@
 var currentDate = moment().format("dddd Do MMMM YYYY"); 
 $('#currentDay').text(currentDate);
 // var shoppingListEl = $('#shopping-list');
-var currentTime = moment().format("LT"); 
-$('#currentTime').text(currentTime);
 var currentHour = moment().hour();
+var update = function() {
+    var currentTime = moment().format("LTS"); 
+    $('#currentTime').text(currentTime);
+    setTimeout(update, 1000);
+    // setInterval or setTimeout can be used.
+}
+update();
+
 
 var timeGen = 8
 var timeBlock = $('.time-block');
@@ -20,7 +26,7 @@ function renderSchedule() {
     // Use variables to dynamically replicate "newRow".
     var newRow = $('<ul class="time-row">');
     var timeCell = $('<li class="time-cell">');
-    var textCell = $('<textarea class="text-cell present" id="schedule" placeholder="Enter your details here..." rows="3">');
+    var textCell = $('<textarea class="text-cell future" id="schedule" placeholder="Enter your details here..." rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     
     // Append new row to exixting block
