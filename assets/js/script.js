@@ -1,8 +1,9 @@
 
+// Apply current date to header.
 var currentDate = moment().format("dddd Do MMMM YYYY"); 
 $('#currentDay').text(currentDate);
-// var shoppingListEl = $('#shopping-list');
-var currentHour = moment().hour();
+
+// Set current time to update dynamically
 var update = function() {
     var currentTime = moment().format("LTS"); 
     $('#currentTime').text(currentTime);
@@ -10,13 +11,15 @@ var update = function() {
     // setInterval or setTimeout can be used.
 }
 update();
-
+// Use just the hour segment to apply colour change
+var currentHour = moment().hour();
 
 var timeGen = 8
 var timeBlock = $('.time-block');
 var timeRow = $('.time-row');
 var tempRow = $('.temp-row');
 
+// Main function to execute code
 function renderSchedule() {
     // Dynamically create rows
     // Create a for-loop to iterate through the time slots.
@@ -26,7 +29,7 @@ function renderSchedule() {
     // Use variables to dynamically replicate "newRow".
     var newRow = $('<ul class="time-row">');
     var timeCell = $('<li class="time-cell">');
-    var textCell = $('<textarea class="text-cell future" id="schedule" placeholder="Enter your details here..." rows="3">');
+    var textCell = $('<textarea class="text-cell present" id="schedule" placeholder="Enter your details here..." rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     
     // Append new row to exixting block
@@ -40,10 +43,12 @@ function renderSchedule() {
         timeCell.text(('0')+timeGen+(':00'))
       }
 
+//-----------------------------------------------------
     console.log(timeRow)
     console.log(timeGen)
+//-----------------------------------------------------
 
-    
+//Use 'currentHour' variable to calculate set change
     if (currentHour > timeGen) {
         textCell.addClass( "previous" )
         textCell.removeClass("present future");
@@ -51,18 +56,19 @@ function renderSchedule() {
             textCell.addClass('future');
             textCell.removeClass("present previous");
         } 
-    console.log(moment().hour())
 
+    // Function to save text 
         saveBtn.on('click', function () {
             // event.preventDefault();
           
-            var details = $(".text-cell").text;
+            var details = $(".text-cell").val();
                   
             localStorage.setItem("details", details);
             localStorage.getItem("details", details);
         
         });
 
+    // Mouse-over effect
         saveBtn.mouseenter(function() {
             $( this ).css('background-color', '#83cddd');
             $( this ).css('color', 'rgb(139, 135, 135)'); 
