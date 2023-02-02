@@ -64,7 +64,7 @@ function renderSchedule() {
             var details = $(".text-cell").val();
                   
             localStorage.setItem("details", details);
-            localStorage.getItem("details", details);
+            localStorage.getItem("details");
         
         });
 
