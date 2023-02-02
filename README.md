@@ -13,7 +13,7 @@ The following animation demonstrates the application functionality:
 ![A user clicks on slots on the color-coded calendar and edits the events.](./assets/images/05-third-party-apis-homework-demo.gif)
 
 ## Usage
-This Repo is made up of the core files and folders related to the task. I have added comments to all the relevant sections of the code, highlighting key areas and the expected result derived from it. The content comprise only that related to the task and I have kept the interface very simple and straight forward to use. It also contains a folder with an animated image of the mock-up depicting the final product. It’s quite straight forward to use, simply click here to begin.
+This Repo is made up of the core files and folders related to the task. I have added comments to all the relevant sections of the code, highlighting key areas and the expected result derived from it. The content comprise only that related to the task and I have kept the interface very simple and straight forward to use. It also contains a folder with an animated image of the mock-up depicting the final product. It’s quite straight forward to use, simply click [**here.**](https://rhanciles.github.io/Work-Day-Scheduler/) to begin.
 
 ## Feedback
 Please feel free to reach out or drop a comment here if you have any questions, queries or suggestions. Otherwise, you can find me on the Slack platform Pod 5, just search for Rod.
