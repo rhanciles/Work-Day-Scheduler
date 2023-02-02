@@ -4,6 +4,7 @@ $('#currentDay').text(currentDate);
 // var shoppingListEl = $('#shopping-list');
 var currentTime = moment().format("LT"); 
 $('#currentTime').text(currentTime);
+var currentHour = moment().hour();
 
 var timeGen = 8
 var timeBlock = $('.time-block');
@@ -19,7 +20,7 @@ function renderSchedule() {
     // Use variables to dynamically replicate "newRow".
     var newRow = $('<ul class="time-row">');
     var timeCell = $('<li class="time-cell">');
-    var textCell = $('<textarea class="text-cell future" id="schedule" placeholder="Enter your details here..." rows="3">');
+    var textCell = $('<textarea class="text-cell present" id="schedule" placeholder="Enter your details here..." rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     
     // Append new row to exixting block
@@ -35,26 +36,37 @@ function renderSchedule() {
 
     console.log(timeRow)
     console.log(timeGen)
-    
-    if (moment.hour > timeGen) {
-        textCell.addclass('past');
-        textCell.removeClass("present future");
-    }  else if (moment.hour < timeGen) {
-            textCell.addclass('future');
-            textCell.removeClass("present past");
-        } 
 
-        saveBtn.on('click', function (event) {
-            event.preventDefault();
+    
+    if (currentHour > timeGen) {
+        textCell.addClass( "previous" )
+        textCell.removeClass("present future");
+    }  else if (currentHour < timeGen) {
+            textCell.addClass('future');
+            textCell.removeClass("present previous");
+        } 
+    console.log(moment().hour())
+
+        saveBtn.on('click', function () {
+            // event.preventDefault();
           
-            var details = $(".text-cell").value;
+            var details = $(".text-cell").text;
                   
             localStorage.setItem("details", details);
+            localStorage.getItem("details", details);
         
         });
 
         saveBtn.mouseenter(function() {
-            $( this ).css('background-color', '#83cddd'), ('color', 'rgb(199, 199, 199)'), ('cursor', 'pointer');
+            $( this ).css('background-color', '#83cddd');
+            $( this ).css('color', 'rgb(139, 135, 135)'); 
+            $( this ).css('cursor', 'pointer');
+        
+          });
+
+        saveBtn.mouseleave(function() {
+            $( this ).css('background-color', '#06aed5');
+            $( this ).css('color', 'white');
         
           });
 
