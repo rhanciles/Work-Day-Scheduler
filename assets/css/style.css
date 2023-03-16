@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 textarea {
@@ -24,6 +24,14 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  margin-bottom: 0px;
+}
+
+#backDrop {
+  background-image: url(../images/vector-NOV-2020-22-grey-02.png);
+  background-size: cover;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .text-cell {
@@ -40,6 +48,7 @@ textarea {
   display: flex;
   flex-grow: 0.3;
   padding: 15px;
+  font-weight: bold;
   justify-content: right;
   border-right: 1px solid black;
   border-top: 1px solid rgb(175, 175, 175);
