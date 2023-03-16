@@ -50,7 +50,7 @@ function renderSchedule() {
     console.log  ("saveBtn clicked!");
     details = $(".text-field").val();
     console.log ("details  = ", details);
-    event.target(localStorage.setItem("details", details));
+    localStorage.setItem("details", details);
     // localStorage.setItem("details", JSON.stringify(details));
     // console.log(event)
     // saveText()
@@ -70,7 +70,7 @@ function renderSchedule() {
         timeCell.text(('0')+timeGen+(':00'));
       }
 
-    $("#details").val(details);
+    $(".text-field").val(details).target;
 
 //-----------------------------------------------------
     // console.log(timeRow)
