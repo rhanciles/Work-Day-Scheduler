@@ -15,7 +15,7 @@ update();
 // create individual variables to target each storage location.
 var details0 = localStorage.getItem('details0');
 var details1 = localStorage.getItem('details1');
-var details2 = localStorage.getItem('details3');
+var details2 = localStorage.getItem('details2');
 var details3 = localStorage.getItem('details3');
 var details4 = localStorage.getItem('details4');
 var details5 = localStorage.getItem('details5');
