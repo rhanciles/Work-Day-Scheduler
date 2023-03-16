@@ -12,10 +12,7 @@ var update = function() {
 }
 update();
 
-// JSON.parse(localStorage.getItem("details")) || [];
-// console.log(cityRecall);
-// var details = localStorage.getItem('details');
-
+// create individual variables to target each storage location.
 var details0 = localStorage.getItem('details0');
 var details1 = localStorage.getItem('details1');
 var details2 = localStorage.getItem('details3');
@@ -28,11 +25,6 @@ var details8 = localStorage.getItem('details8');
 
 console.log("P0: " + $(".text-field").val());
 
-// savedText = $(".text-field").text();
-
-// console.log("Stored: " + details);
-
-// Use just the hour segment to apply colour change
 var currentHour = moment().hour();
 
 var timeGen = 8
@@ -53,6 +45,8 @@ function renderSchedule() {
     var txtField = $("<div class='text-cell present'>");
     var textCell = $('<textarea class="text-field" placeholder="Enter your details here..." name="details" rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
+
+    // Use For Loop to dynamically create individual id's for each row.
     textCell.attr('id', 'details' + [i]);
     newRow.attr('id', 'timeSection' + [i]);
     
@@ -64,16 +58,13 @@ function renderSchedule() {
     console.log ("details  = ", details);
     var detailsID = $(this).siblings(".text-cell").children(".text-field").attr('id');
     localStorage.setItem(detailsID, details);
-    // localStorage.setItem("details", JSON.stringify(details));
-    // console.log(event)
-    // saveText()
 
     console.log("P1: " + $(".text-field").val());
     console.log("This is ID No: ", detailsID);
 
 });
 
-    // Append new row to exixting block
+    // Append new row to existing block
     timeBlock.append(newRow);
     txtField.append(textCell);
     newRow.append(timeCell, txtField, saveBtn);
@@ -85,8 +76,8 @@ function renderSchedule() {
         timeCell.text(('0')+timeGen+(':00'));
       }
 
-    // $(".text-field").val(details0).target;
-
+    
+    // Update each row with their respective contents  
     $("#details0").val(details0);
     $("#details1").val(details1);
     $("#details2").val(details2);
@@ -103,7 +94,7 @@ function renderSchedule() {
     console.log(timeGen);
 //-----------------------------------------------------
 
-//Use 'currentHour' variable to calculate set change
+//Use 'currentHour' variable to set the colour of the text field.
     if (currentHour > timeGen) {
         txtField.addClass( "previous" );
         txtField.removeClass("present future");
@@ -112,7 +103,7 @@ function renderSchedule() {
             txtField.removeClass("present previous");
         } 
 
-    // Mouse-over effect
+    // Mouse-over effect for save button
         saveBtn.mouseenter(function() {
             $( this ).css('background-color', '#83cddd');
             $( this ).css('color', 'rgb(139, 135, 135)'); 
@@ -135,7 +126,4 @@ function renderSchedule() {
 $(tempRow).hide();
 renderSchedule();
 
-// function saveText() {
-//     $(".text-field").val() = localStorage.getItem('details');
-// }
 
