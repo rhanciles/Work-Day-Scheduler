@@ -108,3 +108,71 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+#timeSection0,
+#timeSection2,
+#timeSection4,
+#timeSection6,
+#timeSection8 {
+  animation: 8s slide-left;
+}
+@keyframes slide-left {
+  from {
+    margin-left: 120rem;
+    opacity: 0;
+    width: 5%;
+  }
+  70% {
+    margin-left: 15rem;
+    opacity: 0.8;
+    width: 90%;
+  }
+  to {
+    margin-left: "";
+    opacity: 1;
+    width: "";
+  }
+}
+
+#timeSection1,
+#timeSection3,
+#timeSection5,
+#timeSection7 {
+  animation: 8s slide-right;
+}
+@keyframes slide-right {
+  from {
+    margin-right: 150rem;
+    opacity: 0;
+    width: 5%;
+  }
+  70% {
+    margin-right: 11.5rem;
+    opacity: 0.8;
+    width: 80%;
+  }
+  to {
+    margin-right: "";
+    opacity: 1;
+    width: "";
+  }
+}
+
+#backDrop {
+  animation: 8s fade-in;
+  transition: linear;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    margin-top: -150rem;
+  }
+  50% {
+    margin-top: 0rem;
+    opacity: 0.4;
+  }
+  to {
+    margin-top: "";
+    opacity: 1;
+  }
+}
