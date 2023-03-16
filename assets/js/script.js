@@ -14,12 +14,19 @@ update();
 
 // JSON.parse(localStorage.getItem("details")) || [];
 // console.log(cityRecall);
-var details = localStorage.getItem('details');
+var details0 = localStorage.getItem('details0');
+// var details1 = localStorage.getItem('details1');
+// var details2 = localStorage.getItem('details3');
+// var details3 = localStorage.getItem('details3');
+// var details4 = localStorage.getItem('details4');
+// var details5 = localStorage.getItem('details5');
+// var details6 = localStorage.getItem('details6');
+
 console.log("P0: " + $(".text-field").val());
 
 // savedText = $(".text-field").text();
 
-console.log("Stored: " + details);
+// console.log("Stored: " + details);
 
 // Use just the hour segment to apply colour change
 var currentHour = moment().hour();
@@ -43,19 +50,25 @@ function renderSchedule() {
     var textCell = $('<textarea class="text-field" placeholder="Enter your details here..." name="details" rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     textCell.attr('id', 'details' + [i]);
+
+    
     
     // Function to save text 
     saveBtn.on('click', function (event) {
     event.preventDefault();
     console.log  ("saveBtn clicked!");
-    details = $(".text-field").val();
+    // details = $(".text-field").val();
+    details = $(this).siblings(".text-cell").children(".text-field").val();
+    var detailsID = $(this).siblings(".text-cell").children(".text-field").attr('id');
     console.log ("details  = ", details);
-    localStorage.setItem("details", details);
+    localStorage.setItem(detailsID, details);
     // localStorage.setItem("details", JSON.stringify(details));
     // console.log(event)
     // saveText()
 
-    console.log("P1: " + $(".text-field").val());
+    console.log("This is ID No: ", detailsID);
+
+    // console.log("P1: " + $(".text-field").val());
 });
 
     // Append new row to exixting block
@@ -70,7 +83,7 @@ function renderSchedule() {
         timeCell.text(('0')+timeGen+(':00'));
       }
 
-    $(".text-field").val(details).target;
+    // $("#details" + [i]).val(details).target;
 
 //-----------------------------------------------------
     // console.log(timeRow)
