@@ -54,6 +54,7 @@ function renderSchedule() {
     var textCell = $('<textarea class="text-field" placeholder="Enter your details here..." name="details" rows="3">');
     var saveBtn = $('<li class="fas fa-save save-btn">');
     textCell.attr('id', 'details' + [i]);
+    newRow.attr('id', 'timeSection' + [i]);
     
     // Function to save text 
     saveBtn.on('click', function (event) {
