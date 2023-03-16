@@ -13,8 +13,6 @@ textarea {
   resize: none;
   color: #000000;
   height: 76px;
-  /* width: inherit; */
-  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -27,9 +25,11 @@ textarea {
   margin-bottom: 0px;
 }
 
+/* Add background image */
 #backDrop {
   background-image: url(../images/vector-NOV-2020-22-grey-02.png);
   background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -40,7 +40,6 @@ textarea {
   align-items: flex-start;
   line-height: 1.5;
   flex-grow: 7;
-  /* padding: 5px 10px 5px; */
   border: 1px solid rgb(175, 175, 175);
 }
 
@@ -109,6 +108,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+/* Add Fx to the rows on load. */
 #timeSection0,
 #timeSection2,
 #timeSection4,
@@ -124,7 +124,7 @@ textarea {
   }
   70% {
     margin-left: 15rem;
-    opacity: 0.8;
+    opacity: 0.9;
     width: 90%;
   }
   to {
@@ -148,7 +148,7 @@ textarea {
   }
   70% {
     margin-right: 11.5rem;
-    opacity: 0.8;
+    opacity: 0.9;
     width: 80%;
   }
   to {
@@ -158,6 +158,7 @@ textarea {
   }
 }
 
+/* Add Fx to the background. */
 #backDrop {
   animation: 8s fade-in;
   transition: linear;
@@ -165,14 +166,14 @@ textarea {
 @keyframes fade-in {
   from {
     opacity: 0;
-    margin-top: -150rem;
+    background-position: -150rem;
   }
-  50% {
-    margin-top: 0rem;
-    opacity: 0.4;
+  60% {
+    background-position: 0rem;
+    opacity: 0.3;
   }
   to {
-    margin-top: "";
+    background-position: "";
     opacity: 1;
   }
 }
