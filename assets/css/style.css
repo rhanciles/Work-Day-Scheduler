@@ -7,10 +7,14 @@ body {
 
 textarea {
   background: transparent;
+  display: flex;
+  flex: 1;
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  height: 76px;
+  /* width: inherit; */
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -28,7 +32,7 @@ textarea {
   align-items: flex-start;
   line-height: 1.5;
   flex-grow: 7;
-  padding: 5px 10px 5px;
+  /* padding: 5px 10px 5px; */
   border: 1px solid rgb(175, 175, 175);
 }
 
